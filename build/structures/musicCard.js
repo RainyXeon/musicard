@@ -24,6 +24,7 @@ class musicCard {
         this.progress = options?.progress ?? null;
         this.starttime = options?.startTime ?? null;
         this.endtime = options?.endTime ?? null;
+        this.requester = options?.requester ?? null;
     }
 
     setName(name) {
@@ -71,9 +72,15 @@ class musicCard {
         return this;
     }
 
+    setRequester(requester) {
+        this.requester = requester;
+        return this;
+    }
+
     async build() {
         if (!this.name) throw new Error('Missing name parameter');
         if (!this.author) throw new Error('Missing author parameter');
+        if (!this.requester) throw new Error('Missing requester parameter');
         if (!this.color) this.setColor('ff0000');
         if (!this.theme) this.setTheme('classic');
         if (!this.brightness) this.setBrightness(0);
@@ -99,12 +106,13 @@ class musicCard {
 
         if (this.name.length > 15) this.name = `${this.name.slice(0, 15)}...`;
         if (this.author.length > 15) this.author = `${this.author.slice(0, 15)}...`;
+        if (this.requester.length > 15) this.author = `${this.requester.slice(0, 15)}...`;
 
         if (this.theme == 'classic') {
             const progressBarWidth = (validatedProgress / 100) * 670;
             const circleX = progressBarWidth + 60;
 
-            const progressBarCanvas = canvas.createCanvas(670, 25);
+            const progressBarCanvas = canvas.createCanvas(700, 35);
             const progressBarCtx = progressBarCanvas.getContext('2d');
             const cornerRadius = 10;
             progressBarCtx.beginPath();
@@ -190,6 +198,10 @@ class musicCard {
             ctx.fillStyle = '#b8b8b8';
             ctx.font = `50px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
             ctx.fillText(this.author, 75, 190);
+
+            ctx.fillStyle = '#b8b8b8';
+            ctx.font = `60px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
+            ctx.fillText(this.requester, 80, 260);
 
             ctx.fillStyle = '#fff';
             ctx.font = '30px circular-std';
