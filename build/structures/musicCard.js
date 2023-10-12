@@ -112,7 +112,7 @@ class musicCard {
             const progressBarWidth = (validatedProgress / 100) * 670;
             const circleX = progressBarWidth + 60;
 
-            const progressBarCanvas = canvas.createCanvas(700, 35);
+            const progressBarCanvas = canvas.createCanvas(720, 35);
             const progressBarCtx = progressBarCanvas.getContext('2d');
             const cornerRadius = 10;
             progressBarCtx.beginPath();
@@ -154,7 +154,7 @@ class musicCard {
 
             const background = await canvas.loadImage(`https://s6.imgcdn.dev/ZDjTD.png`);
 
-            const thumbnailCanvas = canvas.createCanvas(564, 564);
+            const thumbnailCanvas = canvas.createCanvas(600, 600);
             const thumbnailCtx = thumbnailCanvas.getContext('2d');
 
             let thumbnailImage;
