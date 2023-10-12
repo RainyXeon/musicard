@@ -9,6 +9,7 @@ export declare class musicCard {
     progress?: number;
     startTime?: string;
     endTime?: string;
+    requester?: string;
   });
 
   public setName(name: string): this;
@@ -20,6 +21,7 @@ export declare class musicCard {
   public setProgress(progress: number): this;
   public setStartTime(starttime: string): this;
   public setEndTime(endtime: string): this;
+  public setRequester(requester: string): this;
 
   public build(): Promise<Buffer>;
 }
