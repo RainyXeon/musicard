@@ -24,7 +24,7 @@ class musicCard {
         this.progress = options?.progress ?? null;
         this.starttime = options?.startTime ?? null;
         this.endtime = options?.endTime ?? null;
-        this.requester = options?.requester ?? null;
+        this.requester = options?.requester ?? null
     }
 
     setName(name) {
@@ -106,13 +106,13 @@ class musicCard {
 
         if (this.name.length > 15) this.name = `${this.name.slice(0, 15)}...`;
         if (this.author.length > 15) this.author = `${this.author.slice(0, 15)}...`;
-        if (this.requester.length > 15) this.author = `${this.requester.slice(0, 15)}...`;
+        if (this.requester.length > 15) this.requester = `Requested by ${this.requester.slice(0, 15)}...`;
 
         if (this.theme == 'classic') {
             const progressBarWidth = (validatedProgress / 100) * 670;
             const circleX = progressBarWidth + 60;
 
-            const progressBarCanvas = canvas.createCanvas(700, 65);
+            const progressBarCanvas = canvas.createCanvas(670, 25);
             const progressBarCtx = progressBarCanvas.getContext('2d');
             const cornerRadius = 10;
             progressBarCtx.beginPath();
@@ -186,10 +186,10 @@ class musicCard {
 
             thumbnailCtx.drawImage(thumbnailImage, thumbnailX, thumbnailY, thumbnailSize, thumbnailSize, 0, 0, thumbnailCanvas.width, thumbnailCanvas.height);
 
-            const image = canvas.createCanvas(1280, 500);
+            const image = canvas.createCanvas(1280, 450);
             const ctx = image.getContext('2d');
 
-            ctx.drawImage(background, 0, 0, 1280, 500);
+            ctx.drawImage(background, 0, 0, 1280, 450);
 
             ctx.fillStyle = `#${validatedColor}`;
             ctx.font = `75px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
@@ -198,9 +198,9 @@ class musicCard {
             ctx.fillStyle = '#b8b8b8';
             ctx.font = `50px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
             ctx.fillText(this.author, 75, 190);
-
-            ctx.fillStyle = '#b8b8b8';
-            ctx.font = `60px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
+            
+            ctx.fillStyle = `#${validatedColor}`;
+            ctx.font = `25px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
             ctx.fillText(this.requester, 80, 260);
 
             ctx.fillStyle = '#fff';
