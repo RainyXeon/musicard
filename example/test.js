@@ -5,7 +5,7 @@
     const card = new musicCard()
         .setName("Bad Habits")
         .setAuthor("By Ed Sheeran")
-        // .setRequester("rainyxeon")
+        .setRequester("rainyxeon")
         .setColor("blue")
         .setTheme("classic")
         .setBrightness(50)

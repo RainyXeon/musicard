@@ -198,9 +198,9 @@ class musicCard {
             ctx.fillStyle = '#b8b8b8';
             ctx.font = `50px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
             ctx.fillText(this.author, 75, 190);
-            
-            ctx.fillStyle = `#${validatedColor}`;
-            ctx.font = `25px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
+
+            ctx.fillStyle = '#b8b8b8';
+            ctx.font = `20px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
             ctx.fillText(this.requester, 80, 260);
 
             ctx.fillStyle = '#fff';
