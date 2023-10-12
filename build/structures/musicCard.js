@@ -200,8 +200,8 @@ class musicCard {
             ctx.fillText(this.author, 75, 190);
 
             ctx.fillStyle = '#b8b8b8';
-            ctx.font = `30px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
-            ctx.fillText(this.requester, 77, 190);
+            ctx.font = `45px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
+            ctx.fillText(this.requester, 75, 240);
 
             ctx.fillStyle = '#fff';
             ctx.font = '30px circular-std';
