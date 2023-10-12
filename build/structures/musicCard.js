@@ -145,7 +145,7 @@ class musicCard {
             const circleCtx = circleCanvas.getContext('2d');
 
             const circleRadius = 20;
-            const circleY = 97;
+            const circleY = 150;
 
             circleCtx.beginPath();
             circleCtx.arc(circleX, circleY, circleRadius, 0, 2 * Math.PI);
