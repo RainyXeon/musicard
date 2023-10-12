@@ -73,7 +73,7 @@ class musicCard {
     }
 
     setRequester(requester) {
-        this.requester = requester;
+        this.requester = `Requested by ${requester}`;
         return this;
     }
 
@@ -104,9 +104,9 @@ class musicCard {
             this.thumbnail
         );
 
-        if (this.name.length > 15) this.name = `${this.name.slice(0, 15)}...`;
-        if (this.author.length > 15) this.author = `${this.author.slice(0, 15)}...`;
-        if (this.requester.length > 15) this.requester = `Requested by ${this.requester.slice(0, 15)}...`;
+        if (this.name.replace(/\s/g,'').length > 15) this.name = `${this.name.slice(0, 15)}...`;
+        if (this.author.replace(/\s/g,'').length > 15) this.author = `${this.author.slice(0, 15)}...`;
+        if (this.requester.replace(/\s/g,'').length > 35) this.requester = `${this.requester.slice(0, 35)}...`;
 
         if (this.theme == 'classic') {
             const progressBarWidth = (validatedProgress / 100) * 670;
@@ -200,8 +200,8 @@ class musicCard {
             ctx.fillText(this.author, 75, 190);
 
             ctx.fillStyle = '#b8b8b8';
-            ctx.font = `20px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
-            ctx.fillText(this.requester, 80, 260);
+            ctx.font = `30px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
+            ctx.fillText(this.requester, 77, 190);
 
             ctx.fillStyle = '#fff';
             ctx.font = '30px circular-std';
