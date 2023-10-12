@@ -186,10 +186,10 @@ class musicCard {
 
             thumbnailCtx.drawImage(thumbnailImage, thumbnailX, thumbnailY, thumbnailSize, thumbnailSize, 0, 0, thumbnailCanvas.width, thumbnailCanvas.height);
 
-            const image = canvas.createCanvas(1280, 450);
+            const image = canvas.createCanvas(1280, 500);
             const ctx = image.getContext('2d');
 
-            ctx.drawImage(background, 0, 0, 1280, 450);
+            ctx.drawImage(background, 0, 0, 1280, 500);
 
             ctx.fillStyle = `#${validatedColor}`;
             ctx.font = `75px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
